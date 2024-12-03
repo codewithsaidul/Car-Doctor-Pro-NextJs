@@ -14,6 +14,7 @@
 
   .nav__list {
     @apply flex items-center gap-8;
+
   }
 
   .nav__link {
@@ -22,5 +23,11 @@
 
   .header__btn {
     @apply p-2 sm:py-2 sm:px-4 bg-transparent border border-primary rounded-md text-center text-sm sm:text-xl font-semibold text-primary duration-700 hover:text-white hover:bg-primary hover:duration-700;
+  }
+
+
+  /* =============================== Footer ========================= */
+  .footer2 {
+    @apply px-4 sm:px-8 md:px-14 lg:px-20 mx-auto bg-base-200 text-base-content py-20
   }
 }
