@@ -2,10 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply p-2 rounded-full bg-black
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply w-8 h-8 bg-primary rounded-full transition-colors duration-700
+  }
+}
+
+
+
 @layer utilities {
   /* ========================== Header =============================== */
   .header {
-    @apply px-4 sm:px-8 md:px-14 lg:px-20 mx-auto bg-base-100 shadow-2xl fixed top-0 left-0 right-0;
+    @apply px-4 sm:px-8 md:px-14 lg:px-20 mx-auto bg-base-100 shadow-2xl fixed top-0 left-0 right-0 z-50;
   }
 
   .logo {
@@ -25,6 +38,43 @@
     @apply p-2 sm:py-2 sm:px-4 bg-transparent border border-primary rounded-md text-center text-sm sm:text-xl font-semibold text-primary duration-700 hover:text-white hover:bg-primary hover:duration-700;
   }
 
+
+  /* ============================== Home Page ======================= */
+  .main {
+    @apply px-4 sm:px-8 md:px-14 lg:px-20 mx-auto mt-16
+  }
+
+  /* ==================== Hero Section ================ */
+  .hero__content {
+   @apply w-full md:w-[500px] text-white text-center lg:text-left flex flex-col space-y-5
+  }
+
+  .hero__title {
+   @apply text-2xl sm:text-3xl md:text-5xl lg:text-7xl text-white
+  }
+
+  .hero__description {
+    @apply text-base font-medium
+  }
+
+  .hero__btn-group {
+    @apply flex gap-4
+  }
+
+  .hero__btn {
+    @apply py-2 px-4 bg-primary border border-primary text-white text-lg rounded-md duration-700 hover:bg-transparent hover:border-white hover:duration-700
+  }
+
+  .hero__btn-outline {
+    @apply py-2 px-4 bg-transparent border border-white text-white text-lg rounded-md duration-700 hover:bg-primary hover:border-primary hover:duration-700
+  }
+
+  .caro__btn-group {
+    @apply absolute flex gap-6 right-24 bottom-4 -translate-y-1/2 transform
+  }
+  .slide__btn {
+    @apply py-4 px-6 bg-white/20 rounded-full text-2xl text-white duration-1000 hover:bg-primary hover:duration-1000
+  }
 
   /* =============================== Footer ========================= */
   .footer2 {
