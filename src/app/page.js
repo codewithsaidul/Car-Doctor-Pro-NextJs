@@ -1,6 +1,6 @@
-import About from "@/components/HomePage/About";
-import Hero from "@/components/HomePage/Hero";
-import Services from "@/components/HomePage/Services";
+import Hero from "../components/HomePage/Hero"
+import About from "../components/HomePage/About"
+import Services from "../components/HomePage/Services"
 
 
 export default function Home() {

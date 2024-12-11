@@ -1,6 +1,7 @@
-import Navbar from "@/components/Shared/Navbar";
+import Footer from "../components/Shared/Footer";
+import Navbar from "../components/Shared/Navbar";
 import "./globals.css";
-import Footer from "@/components/Shared/Footer";
+
 
 export const metadata = {
   title: "Car Doctor Pro || CodeWithSaidul",
