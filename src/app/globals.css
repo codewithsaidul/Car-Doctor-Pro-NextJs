@@ -79,7 +79,7 @@
 
   /* =========================== Login & Register ===================== */
   .form__group {
-    @apply flex flex-col gap-4 w-full
+    @apply flex flex-col gap-1 w-full
   }
 
   .form__group input {

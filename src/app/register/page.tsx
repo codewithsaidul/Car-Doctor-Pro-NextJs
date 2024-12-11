@@ -16,8 +16,12 @@ const page = () => {
         </figure>
 
         <div className="w-full lg:w-1/2 border-2 border-gray-300 p-4 sm:px-6 md:px-8 lg:p-10">
-          <form className="w-full">
-            <h2 className="text-3xl text-center font-bold mb-10">Login</h2>
+          <form className="w-full space-y-4">
+            <h2 className="text-3xl text-center font-bold mb-10">Register New Account</h2>
+            <div className="form__group">
+              <label>Name</label>
+              <input type="text" name="name" placeholder="Your Name" />
+            </div>
             <div className="form__group">
               <label>E-mail</label>
               <input type="email" name="email" placeholder="Your E-mail" />
@@ -33,7 +37,7 @@ const page = () => {
 
             <input
               type="submit"
-              value="Sign In"
+              value="Sign Up"
               className="text-white text-xl font-semibold py-2 px-4 bg-primary w-full mt-7 rounded-lg"
             />
           </form>
@@ -61,7 +65,7 @@ const page = () => {
           </div>
 
 
-          <p className="text-base text-[#737373] text-center mt-5 font-medium">Don&apos;t Have an account? <Link href="/register" className="text-primary">Sign Up</Link></p>
+          <p className="text-base text-[#737373] text-center mt-5 font-medium">Already Have an account? <Link href="/login" className="text-primary">Sign In</Link></p>
         </div>
       </div>
     </div>
