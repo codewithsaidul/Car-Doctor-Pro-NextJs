@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CarServices } from "../../../public/services"
+import { CarServices } from "../../../lib/services"
 
 const Services = () => {
   return (
