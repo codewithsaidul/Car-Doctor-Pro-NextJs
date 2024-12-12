@@ -1,9 +1,10 @@
 "use client";
 
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+
 
 const NavMenu = [
   {
@@ -30,7 +31,12 @@ const NavMenu = [
 
 const Navbar = () => {
   const pathName = usePathname();
-  const [user, setUser] = useState(false);
+  const session = useSession();
+
+
+
+  const user = session?.data?.user
+
   return (
     <header className="header">
       <div className="navbar">
@@ -98,7 +104,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <a className="header__btn">Appointment</a>
+            <div className="flex items-center gap-1">
+              <a className="header__btn">Appointment</a>
+              <button className="header__btn" onClick={() => signOut()}>Log Out</button>
+            </div>
           ) : (
             <Link href="/login" className="header__btn">
               Sign IN
