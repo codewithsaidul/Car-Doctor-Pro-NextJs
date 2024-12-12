@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
 
 const NavMenu = [
   {
@@ -30,7 +30,7 @@ const NavMenu = [
 
 const Navbar = () => {
   const pathName = usePathname();
-
+  const [user, setUser] = useState(false);
   return (
     <header className="header">
       <div className="navbar">
@@ -97,7 +97,13 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="header__btn">Appointment</a>
+          {user ? (
+            <a className="header__btn">Appointment</a>
+          ) : (
+            <Link href="/login" className="header__btn">
+              Sign IN
+            </Link>
+          )}
         </div>
       </div>
     </header>
