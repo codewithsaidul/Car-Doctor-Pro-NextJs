@@ -17,6 +17,7 @@ const page = () => {
     console.log(newUser)
     
     // Call your API to register the user
+    
   }
 
 
