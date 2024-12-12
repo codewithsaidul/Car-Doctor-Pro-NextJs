@@ -1,24 +1,17 @@
-import Image from "next/image"
-
+import { FaGithub } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 const SocialLogin = () => {
+
+    const handleSocialLogin = async () => {}
+
   return (
     <div className="flex justify-center items-center gap-3">
-            <button className="py-2 px-4 rounded-full bg-[#F5F5F8]">
-              <Image
-                src="/assets/icons/facebook.png"
-                alt="facebook logo"
-                width={16}
-                height={16}
-              />
+            <button className="p-2 rounded-full bg-[#F5F5F8]">
+              <FcGoogle size={24} />
             </button>
-            <button className="p-3 rounded-full bg-[#F5F5F8]">
-              <Image
-                src="/assets/icons/googl.png"
-                alt="facebook logo"
-                width={28}
-                height={28}
-              />
+            <button className="p-2 rounded-full bg-[#F5F5F8]">
+              <FaGithub size={24} />
             </button>
           </div>
   )
