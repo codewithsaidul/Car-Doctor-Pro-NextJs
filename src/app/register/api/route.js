@@ -21,7 +21,7 @@ export const POST = async (request) => {
         // Insert the new user into the database
         const result = await userCollection.insertOne({...newUser, password: hashPassword});
 
-        return new Response(JSON.stringify({ message: "User created successfully" }), { status: 201 });
+        return new Response(JSON.stringify({ message: "User created successfully", result }), { status: 201 });
     } catch (error) {
         return new Response(JSON.stringify({ message: error.message }), { status: 500 });
     }

@@ -1,7 +1,9 @@
 "use client"
 
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const page = () => {
 
@@ -14,10 +16,20 @@ const page = () => {
       password: e.target.password.value,
     }
 
-    console.log(newUser)
+    
     
     // Call your API to register the user
-    
+    const response = await axios.post("http://localhost:3000/register/api", newUser)
+    if (response?.data?.result?.acknowledged) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Created Successfully!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+      e.target.reset();
+    }
   }
 
 
