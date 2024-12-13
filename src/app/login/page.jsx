@@ -1,19 +1,16 @@
 "use client";
 
-import { signIn } from "next-auth/react"
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import SocialLogin from "../../components/Shared/SocialLogin"
-
+import SocialLogin from "../../components/Shared/SocialLogin";
 
 const LoginPage = () => {
-
   const router = useRouter();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
 
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -22,13 +19,20 @@ const LoginPage = () => {
     const response = await signIn("credentials", {
       email,
       password,
-      redirect: false
-    })
+      redirect: false,
+    });
 
     if (response?.status === 200) {
-      router.push("/")
+      router.push("/");
+    } else {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        text: response.error.message,
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
-
   };
 
   return (

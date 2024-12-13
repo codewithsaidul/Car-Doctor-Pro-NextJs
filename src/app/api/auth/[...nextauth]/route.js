@@ -1,6 +1,8 @@
 import NextAuth from "next-auth/next";
 import bcrypt from "bcrypt";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
+import GitHubProvider from "next-auth/providers/github";
 import { connectDB } from "../../../../../lib/connectDB"
 
 const handler = NextAuth({
@@ -38,6 +40,14 @@ const handler = NextAuth({
         return currentUser
       },
     }),
+    GoogleProvider({
+      clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+    }),
+    GitHubProvider({
+      clientId: process.env.NEXT_PUBLIC_GITHUB_ID,
+      clientSecret: process.env.NEXT_PUBLIC_GITHUB_SECRET
+    })
   ],
   callbacks: {},
   pages: {
