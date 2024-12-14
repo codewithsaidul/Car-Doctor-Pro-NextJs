@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
 const NavMenu = [
   {
     path: "/",
@@ -33,9 +32,7 @@ const Navbar = () => {
   const pathName = usePathname();
   const session = useSession();
 
-
-
-  const user = session?.data?.user
+  const user = session?.data?.user;
 
   return (
     <header className="header">
@@ -106,7 +103,9 @@ const Navbar = () => {
           {user ? (
             <div className="flex items-center gap-1">
               <a className="header__btn">Appointment</a>
-              <button className="header__btn" onClick={() => signOut()}>Log Out</button>
+              <button className="p-2 text-base bg-primary text-white rounded-xl" onClick={() => signOut()}>
+                Log Out
+              </button>
             </div>
           ) : (
             <Link href="/login" className="header__btn">
