@@ -2,25 +2,23 @@
 
 import Image from "next/image";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const Services = () => {
 
-    const [allServices, setAllServices] = useState()
+
+  const { data: services = [], isLoading} = useQuery({
+    queryKey: ['services'],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/services/api/get-all`
+      );
+      return response.data;
+    }
+  })
 
 
-    useEffect(() => {
-        getServices();
-    }, [])
-
-  const getServices = async () => {
-    const { data } = await axios.get(
-      "http://localhost:3000/services/api/get-all"
-    );
-    setAllServices(data)
-  };
-
-
+  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="my-20">
       <div className="text-center w-[600px] mx-auto mb-16">
@@ -37,7 +35,7 @@ const Services = () => {
 
       {/* =================== Service Container ====================== */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {allServices?.map((service) => (
+        {services?.map((service) => (
           <div key={service._id}>
             <div className="border-2 border-gray-400 py-8 px-6 rounded-xl   ">
               <figure>
