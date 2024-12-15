@@ -76,7 +76,6 @@
     @apply py-4 px-6 bg-white/20 rounded-full text-2xl text-white duration-1000 hover:bg-primary hover:duration-1000
   }
 
-
   /* =========================== Login & Register ===================== */
   .form__group {
     @apply flex flex-col gap-1 w-full

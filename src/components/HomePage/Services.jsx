@@ -3,6 +3,7 @@
 import Image from "next/image";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 
 const Services = () => {
 
@@ -55,9 +56,11 @@ const Services = () => {
                   Price: ${service.price}
                 </p>
 
-                <button className="text-lg font-medium bg-primary py-2 px-4 text-white rounded-full">
-                  View Details
-                </button>
+                <Link href={`services/${service._id}`}>
+                  <button className="text-lg font-medium bg-primary py-2 px-4 text-white rounded-full">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
