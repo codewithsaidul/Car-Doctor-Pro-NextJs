@@ -4,6 +4,7 @@ import Image from "next/image";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
+import Loading from "../Shared/Loading";
 
 const Services = () => {
 
@@ -19,7 +20,7 @@ const Services = () => {
   })
 
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loading />;
   return (
     <div className="my-20">
       <div className="text-center w-[600px] mx-auto mb-16">
